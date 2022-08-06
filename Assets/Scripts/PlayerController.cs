@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
@@ -14,6 +13,10 @@ public class PlayerController : MonoBehaviour {
     
     public float moveSpeed;
 
+    /// <summary>
+    /// Gets the components for <see cref="_rb"/> and <see cref="_animator"/>
+    /// Gets all the IDs for the animation parameters
+    /// </summary>
     void Start() {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
         ProcessInputs();
+        
+        // Update the animator parameters
         //TODO: still playing idle anim when moving
         if(_moveDirection.x != 0) {
             _animator.SetFloat(_animHorizontalIdleID, _moveDirection.x);
@@ -42,6 +47,10 @@ public class PlayerController : MonoBehaviour {
         Move();
     }
 
+    /// <summary>
+    /// Process all inputs for the player movement
+    /// Sets <see cref="_moveDirection"/> to the input value
+    /// </summary>
     private void ProcessInputs() {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -49,10 +58,10 @@ public class PlayerController : MonoBehaviour {
         _moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
+    /// <summary>
+    /// Moves the player in the direction of <see cref="_moveDirection"/>
+    /// </summary>
     private void Move() {
         _rb.velocity = new Vector2(_moveDirection.x * moveSpeed, _moveDirection.y * moveSpeed);
-        SetAnimMoveSpeed(_rb.velocity);
     }
-
-    private void SetAnimMoveSpeed(Vector2 velocity) { }
 }
