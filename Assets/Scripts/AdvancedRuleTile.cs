@@ -9,6 +9,8 @@ public class AdvancedRuleTile : RuleTile<AdvancedRuleTile.Neighbor> {
     public bool checkSelf;
 
     public class Neighbor : RuleTile.TilingRule.Neighbor {
+        // disable warning about hiding variables and using new keyword
+#pragma warning disable 0108
         public const int This = 1;
         public const int NotThis = 2;
         public const int Any = 3;
@@ -83,7 +85,7 @@ public class AdvancedRuleTile : RuleTile<AdvancedRuleTile.Neighbor> {
     private bool CheckSpecified(TileBase tile) {
         return tilesToConnect.Contains(tile);
     }
-    
+
     /// <summary>
     /// Check no tile is next to this tile.
     /// </summary>
