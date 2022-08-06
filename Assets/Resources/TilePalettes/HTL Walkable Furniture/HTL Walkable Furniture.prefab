@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7929763059293405428}
   - component: {fileID: 3022616504479368179}
   m_Layer: 0
-  m_Name: Furniture
+  m_Name: HTL Walkable Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

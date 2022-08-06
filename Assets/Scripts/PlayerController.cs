@@ -31,11 +31,12 @@ public class PlayerController : MonoBehaviour {
         ProcessInputs();
         
         // Update the animator parameters
-        //TODO: still playing idle anim when moving
         if(_moveDirection.x != 0) {
+            _animator.SetFloat(_animVerticalIdleID, 0);
             _animator.SetFloat(_animHorizontalIdleID, _moveDirection.x);
         }
         if(_moveDirection.y != 0) {
+            _animator.SetFloat(_animHorizontalIdleID, 0);
             _animator.SetFloat(_animVerticalIdleID, _moveDirection.y);
         }
         _animator.SetFloat(_animHorizontalID, _moveDirection.x);
