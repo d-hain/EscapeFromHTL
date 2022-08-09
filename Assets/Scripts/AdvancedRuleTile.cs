@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
 [CreateAssetMenu(menuName = "2D/Tiles/Advanced Rule Tile")]
 public class AdvancedRuleTile : RuleTile<AdvancedRuleTile.Neighbor> {
     public bool alwaysConnect;
