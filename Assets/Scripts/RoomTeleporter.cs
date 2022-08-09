@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -8,7 +9,6 @@ public class RoomTeleporter : MonoBehaviour {
     /// Name of the room in this format: "[A-Z][0-9]{3}"
     /// </summary>
     public string roomName;
-
     public GameObject player;
 
     private SceneAsset _roomsScene;
@@ -24,7 +24,7 @@ public class RoomTeleporter : MonoBehaviour {
     /// </summary>
     private void FindRoomCoordinates() {
         switch(roomName) {
-            case "A004":
+            case "A004": //TODO: add the back rooms and more rooms
                 LoadScene();
                 TeleportToRoom(2, 11, new Vector2(6.6f, 18f), new Vector2(5.4f, 10f));
                 break;
@@ -62,9 +62,8 @@ public class RoomTeleporter : MonoBehaviour {
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-        if(Input.GetKeyDown(KeyCode.E)) {
+        if(Input.GetKeyDown("Interact")) {
             if(other.gameObject.CompareTag("Player")) {
-                Debug.Log("intaract");
                 FindRoomCoordinates();
             }
         }

@@ -44,6 +44,6 @@ class DoorDirection : MonoBehaviour {
 
     private void SpriteRendererChangeSprite(string color, string fileName) {
         _spriteRenderer.sprite =
-            Resources.Load<Sprite>("Sprites/tiles/school/doors/" + color + "/" + fileName);
+            Resources.Load<Sprite>("Sprites/sprites/school/doors/" + color + "/" + fileName);
     }
 }

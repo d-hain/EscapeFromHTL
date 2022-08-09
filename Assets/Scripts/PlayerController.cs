@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour {
@@ -10,9 +12,16 @@ public class PlayerController : MonoBehaviour {
     private int _animHorizontalIdleID;
     private int _animVerticalIdleID;
     private int _animSpeedID;
+    private InputAction _move;
+    private InputAction _interact;
     
     public float moveSpeed;
+    public PlayerInputActions playerControls;
 
+    private void Awake() {
+        playerControls = new PlayerInputActions();
+    }
+    
     /// <summary>
     /// Gets the components for <see cref="_rb"/> and <see cref="_animator"/>
     /// Gets all the IDs for the animation parameters
@@ -43,9 +52,23 @@ public class PlayerController : MonoBehaviour {
         _animator.SetFloat(_animVerticalID, _moveDirection.y);
         _animator.SetFloat(_animSpeedID, _moveDirection.sqrMagnitude);
     }
-
+    
     void FixedUpdate() {
         Move();
+    }
+
+    private void OnEnable() {
+        _move = playerControls.Player.Move;
+        _move.Enable();
+        
+        _interact = playerControls.Player.Interact;
+        _interact.Enable();
+        _interact.performed += OnInteract;
+    }
+
+    private void OnDisable() {
+        _move.Disable();
+        _interact.Disable();
     }
 
     /// <summary>
@@ -53,10 +76,7 @@ public class PlayerController : MonoBehaviour {
     /// Sets <see cref="_moveDirection"/> to the input value
     /// </summary>
     private void ProcessInputs() {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        _moveDirection = new Vector2(moveX, moveY).normalized;
+        _moveDirection = _move.ReadValue<Vector2>();
     }
 
     /// <summary>
@@ -64,5 +84,9 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     private void Move() {
         _rb.velocity = new Vector2(_moveDirection.x * moveSpeed, _moveDirection.y * moveSpeed);
+    }
+
+    public void OnInteract(InputAction.CallbackContext value) {
+        Debug.Log("Interact");
     }
 }
