@@ -1,0 +1,37 @@
+I. Tile Placing
+	1. Tile Palette Window (rechts)
+	2. Tilemap auswählen (neben edit button)
+	3. Tile auswählen
+	4. Oben Tool auswählen
+		a. Brush (B)
+		b. Box ausfüllen
+		c. Eyedropper (I)
+		d. Erase (D)
+	5. Richtige TileMap auswählen (unter tools)
+		TilemapFloor => Boden
+		TilemapWalkableFurniture => bsp. Teppich
+		TilemapBumpableFurniture => bsp. Sessel, Tisch, Automat (KEIN INTERACTABLE)
+		TilemapWalls => Wände
+
+II. Scene ändern
+	1. Project Tab
+	2. Asset Folder
+	3. Scenes Folder
+	4. Scene doppelklicken
+
+III. Raum erstellen
+	1. Rooms Scene auswählen (siehe II)
+	2. Text erstellen
+		(		a. TextOverRooms Objekt auswählen (links in Hierarchy)
+				b. Rechtsclick auf das Objekt
+				c. Create Empty auswählen
+				d. In die Raumnummer umbenennen (A103)
+			3. Das erstelle Objekt auswählen
+			4. Add Component Button klicken (rechts, Inspector Tab)
+			5. TextMeshPro - Text auswählen
+			6. Text ändern (rechts, Inspector Tab auf dem Text Objekt)
+		)
+	3. Auf ein anderes Textobjekt "Strg + D" drücken
+	4. Verschieben und umbenennen
+	5. Rechts den Tile Palette Tab auswählen
+	6. Einen raum Zeichnen (siehe I) (RICHTIGE TILEMAP VERWENDEN (unter tools))
