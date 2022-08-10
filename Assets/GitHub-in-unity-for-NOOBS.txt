@@ -1,0 +1,18 @@
+GitHub in Unity for NOOBS
+
+I. Seine Änderungen hochladen
+	1. Alle Scenes speichern (Strg + S)
+	2. Rider öffnen
+	3. Auf das Auge mit der Notiz links oben (neben dem Suchglas) klicken
+	4. Alle Ordner in denen Änderungen sind durchsuchen auf Rot gekennzeichnete Files (roter Text)
+		Den Packages Order NICHT hinzufügen
+	5. auf alle Files die rot gekennzeichnet sind "Strg + Alt + A" drücken
+		bzw. Rechtsklick => Git => "+ Add"
+	6. Auf den Commit Button klicken (links oben, Grünes häkchen)
+	7. Eine sehr schöne Commit Message im Textfeld verfassen
+	8. Auf den Button "Commit and Push..." klicken
+	9. vielleicht noch einmal die Files überprüfen
+	10. den "Push" Button klicken
+	11. Warten
+	12. Wenn rechts unten eine Blaue Box mit dem Text "Pushed xxx commits to origin/dkupinic"
+	13. Glücklich werden
