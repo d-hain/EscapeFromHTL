@@ -1,28 +1,40 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class RoomTeleporter : MonoBehaviour {
-    /// <summary>
-    /// Name of the room in this format: "[A-Z][0-9]{3}"
-    /// </summary>
-    public string roomName;
+    #region Singleton
+
+    public static RoomTeleporter Instance => _instance;
+    private static RoomTeleporter _instance;
+
+    private void Awake() {
+        if(_instance != null) {
+            Debug.LogWarning("More than one instance of RoomTeleporter found!");
+        }
+
+        _instance = this;
+    }
+
+    #endregion
+
     public GameObject player;
 
     private SceneAsset _roomsScene;
     private AsyncOperation _sceneAsync;
-
-    private void Awake() {
+    
+    private void Start() {
         _roomsScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Scenes/Rooms.unity");
+        Door.PlayerInteract += FindRoomCoordinates;
     }
 
     /// <summary>
+    /// Gets called when the player presses the interact button and is in Range with a door. <br/>
     /// Finds the room with the given name. <br/>
-    /// If a room was found the rooms scene gets loaded and the player is teleported to the room.
+    /// If a room was found, the rooms scene gets loaded and the player is teleported to the room.
     /// </summary>
-    private void FindRoomCoordinates() {
+    /// <param name="roomName">The name of the Room the Player should get teleported to.</param>
+    private void FindRoomCoordinates(string roomName) {
         switch(roomName) {
             case "A004": //TODO: add the back rooms and more rooms
                 LoadScene();
@@ -49,7 +61,7 @@ public class RoomTeleporter : MonoBehaviour {
 
     /// <summary>
     /// Teleports the <see cref="player"/> to the given coordinates. <br/>
-    /// Sets the <see cref="Camera.main">Main Cameras</see> <see cref="CameraController.instance.maxPosition"/>
+    /// Sets the <see cref="Camera.main">Main Cameras</see> <see cref="CameraController.maxPosition"/>
     /// </summary>
     /// <param name="posX">Position of the room on the x-Axis</param>
     /// <param name="posY">Position of the room on the y-Axis</param>
@@ -59,13 +71,5 @@ public class RoomTeleporter : MonoBehaviour {
         CameraController.instance.maxPosition = camMaxPos;
         CameraController.instance.minPosition = camMinPos;
         player.transform.position = new Vector2(posX, posY);
-    }
-
-    private void OnTriggerStay2D(Collider2D other) {
-        if(Input.GetKeyDown("Interact")) {
-            if(other.gameObject.CompareTag("Player")) {
-                FindRoomCoordinates();
-            }
-        }
     }
 }

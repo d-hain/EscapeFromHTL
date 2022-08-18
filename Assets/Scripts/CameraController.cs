@@ -1,11 +1,6 @@
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-    public Transform target;
-    public float smoothing;
-    public Vector2 maxPosition;
-    public Vector2 minPosition;
-    
     #region Singleton
 
     public static CameraController instance;
@@ -19,6 +14,11 @@ public class CameraController : MonoBehaviour {
     }
 
     #endregion
+    
+    public Transform target;
+    public float smoothing;
+    public Vector2 maxPosition;
+    public Vector2 minPosition;
     
     private void Update() {
         if(target.Equals(null)) {

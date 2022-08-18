@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5060842193286078231}
   - component: {fileID: 5060842193286078219}
   - component: {fileID: 5060842193286078225}
-  - component: {fileID: 5060842193286078226}
   - component: {fileID: 5060842193286078228}
   - component: {fileID: 5060842193286078218}
+  - component: {fileID: 5060842193286078226}
+  - component: {fileID: -7456592616308103060}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -126,19 +127,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5060842193286078226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5060842193286078227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fef53235f1f9a8a4da6c5e5845d40bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
 --- !u!95 &5060842193286078228
 Animator:
   serializedVersion: 4
@@ -190,8 +178,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5060842193286078226}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: -7456592616308103060}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -245,7 +233,32 @@ MonoBehaviour:
     m_ActionId: 9621ada0-96aa-4dcc-b267-2ea65e1eddfa
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5060842193286078226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060842193286078227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef53235f1f9a8a4da6c5e5845d40bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+--- !u!114 &-7456592616308103060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060842193286078227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb157ec251375248b528d22e8424b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
