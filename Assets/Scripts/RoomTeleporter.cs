@@ -42,7 +42,7 @@ public class RoomTeleporter : MonoBehaviour {
                 break;
 
             default:
-                Debug.LogError("Room does not exist");
+                Debug.LogError("Room does not exist!");
                 break;
         }
     }

@@ -33,13 +33,11 @@ public class PlayerActions : MonoBehaviour {
 
     #endregion
 
-
     private void Start() {
         _playerInput = GetComponent<PlayerInput>();
         _playerInputActions = new PlayerInputActions();
     }
-
-
+    
     #region OnInputMethods
 
     /// <summary>
@@ -53,8 +51,7 @@ public class PlayerActions : MonoBehaviour {
     }
 
     #endregion
-
-
+    
     /// <summary>
     /// Switches the current ActionMap to the Player ActionMap. <br/>
     /// Enables the Player ActionMap. <br/>
