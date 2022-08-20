@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     private int _animSpeedID;
     private PlayerInputActions _playerInputActions;
 
+    [InspectorName("Movement Speed")]
     public float moveSpeed;
 
     /// <summary>

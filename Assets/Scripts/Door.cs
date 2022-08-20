@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody2D))]
@@ -8,12 +7,20 @@ public class Door : MonoBehaviour {
     /// </summary>
     private bool _isCollidingWithPlayer;
 
-    public delegate void PlayerInteractEvent(string roomName);
+    public delegate void PlayerInteractEvent(string roomName, bool toRoom);
 
     /// <summary>
     /// Name of the room in this format: "[A-C]{1}[0-9]{3}"
     /// </summary>
+    [InspectorName("Room Name")]
     public string roomName;
+    
+    /// <summary>
+    /// true...you want to go to the Room specified. <br/>
+    /// false...you want to go out of the Room specified.
+    /// </summary>
+    [InspectorName("Go to Room")]
+    public bool toRoom;
 
     /// <summary>
     /// The event that is fired when the interact action is performed.
@@ -54,6 +61,6 @@ public class Door : MonoBehaviour {
     private void OnPlayerInteract() {
         if(!_isCollidingWithPlayer) return;
 
-        PlayerInteract?.Invoke(roomName);
+        PlayerInteract?.Invoke(roomName, toRoom);
     }
 }

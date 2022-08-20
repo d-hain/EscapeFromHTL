@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518600fbb882244418c01a9e6c5c0cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 5060842193286078230, guid: 55504167ae2839549a1c1f701b3763da, type: 3}
   smoothing: 0.11
   maxPosition: {x: 100, y: 100}
   minPosition: {x: -100, y: -100}
