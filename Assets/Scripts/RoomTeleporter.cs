@@ -38,7 +38,7 @@ public class RoomTeleporter : MonoBehaviour {
         switch(roomName) {
             case "A004": //TODO: add the back rooms and more rooms
                 LoadScene();
-                TeleportToRoom(2, 11, new Vector2(6.6f, 18f), new Vector2(5.4f, 10f));
+                TeleportToRoom(2, 11, new Vector2(6.6f, 18f), new Vector2(6f, 10.6f));
                 break;
 
             default:
