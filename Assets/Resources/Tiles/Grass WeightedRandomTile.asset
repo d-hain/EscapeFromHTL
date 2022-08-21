@@ -36,14 +36,48 @@ MonoBehaviour:
   m_ColliderType: 1
   Sprites:
   - Sprite: {fileID: 21300000, guid: c8352cd2810e61f41a517d69577c3dd9, type: 3}
-    Weight: 1
+    Weight: 3
   - Sprite: {fileID: 21300000, guid: 02c18dc878cb20e4b9b002bb5e683b1c, type: 3}
-    Weight: 1
+    Weight: 3
   - Sprite: {fileID: 21300000, guid: 6eb581aba5a2e6d40a985697a578798d, type: 3}
-    Weight: 1
+    Weight: 3
   - Sprite: {fileID: 21300000, guid: a4ea466127daf9d45b3e76d9789e3dd5, type: 3}
-    Weight: 1
+    Weight: 3
   - Sprite: {fileID: 21300000, guid: c09e604b7cb0cce45afffcc1ed4f4ccb, type: 3}
     Weight: 20
   - Sprite: {fileID: 21300000, guid: 20d7f19f962036f4395b248ef901865a, type: 3}
     Weight: 5
+  - Sprite: {fileID: 21300000, guid: 62347eb0b3ee6194aa68d96bf2a21830, type: 3}
+    Weight: 8
+  - Sprite: {fileID: 21300000, guid: 4e92cee8d16cbda40ae48c83ef2e4909, type: 3}
+    Weight: 3
+  - Sprite: {fileID: 21300000, guid: 9303a9816c2cb3a4081984305f1f51da, type: 3}
+    Weight: 3
+  - Sprite: {fileID: 21300000, guid: f8984a43abbab394c9c1aa20cea860db, type: 3}
+    Weight: 5
+  - Sprite: {fileID: 21300000, guid: a78fa130b51cb54478e85db5a2b31682, type: 3}
+    Weight: 3
+  - Sprite: {fileID: 21300000, guid: d19e1746daf4d40439225a8e67b47338, type: 3}
+    Weight: 3
+  - Sprite: {fileID: 21300000, guid: 22ebc8091416bed43b1cb67182eaa0ff, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: e574fd1eb5c777f4981bd460c25dd3eb, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: 3946a6f7979f0cb4ca87c3215dd20a56, type: 3}
+    Weight: 3
+  - Sprite: {fileID: 21300000, guid: c1b50842da9a18c47be3165a3b44cfd1, type: 3}
+    Weight: 2
+  - Sprite: {fileID: 21300000, guid: e3358799f4aefb748ab0dc3cfa15fa99, type: 3}
+    Weight: 2
+  - Sprite: {fileID: 21300000, guid: 67d717b0bff7d354984dfdd5710a3283, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: c3e7b5e136922694bb6829427941720f, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: 1b3f1fa7bbfd7264da720d6f7340d82a, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: 799ceb1ce8bd5344ba8ac4d8b9311309, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: 67e3205d7f8be5047917bbc31c2d7760, type: 3}
+    Weight: 1
+  - Sprite: {fileID: 21300000, guid: 1b4135bd1a873cc4ca785296529d341e, type: 3}
+    Weight: 1
